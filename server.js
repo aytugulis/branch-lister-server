@@ -3,12 +3,16 @@ const dotenv = require("dotenv");
 const connectDatabase = require("./helpers/dbHelper");
 const routers = require("./routers/index");
 const customErrorHandler = require("./middlewares/customErrorHandler");
+const cors = require("cors");
 
 // Enviroment Variables
 dotenv.config();
 
 // Use express as app
 const app = express();
+
+//CORS
+app.use(cors());
 
 // DB connection
 connectDatabase();
